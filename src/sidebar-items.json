@@ -38,6 +38,10 @@
         "url": "component-carousel.html"
       },
       {
+        "name": "Collapse",
+        "url": "component-collapse.html"
+      },
+      {
         "name": "Dropdown",
         "url": "component-dropdown.html"
       },
@@ -64,6 +68,10 @@
       {
         "name": "Spinner",
         "url": "component-spinner.html"
+      },
+      {
+        "name": "Toasts",
+        "url": "component-toasts.html"
       },
       {
         "name": "Tooltip",
@@ -112,8 +120,12 @@
         "url": "layout-vertical-1-column.html"
       },
       {
-        "name": "Vertical with Navbar",
+        "name": "Vertical Navbar",
         "url": "layout-vertical-navbar.html"
+      },
+      {
+        "name": "RTL Layout",
+        "url": "layout-rtl.html"
       },
       {
         "name": "Horizontal Menu",
@@ -162,6 +174,17 @@
     "icon": "file-earmark-medical-fill"
   },
   {
+    "name": "Form Validation",
+    "icon": "journal-check",
+    "key": "form-validation",
+    "submenu": [
+      {
+        "name": "Parsley",
+        "url": "form-validation-parsley.html"
+      }
+    ]
+  },
+  {
     "name": "Form Editor",
     "icon": "pen-fill",
     "key": "form-editor",
@@ -190,9 +213,19 @@
     "icon": "grid-1x2-fill"
   },
   {
-    "name": "Datatable",
-    "url": "table-datatable.html",
-    "icon": "file-earmark-spreadsheet-fill"
+    "name": "Datatables",
+    "key": "table-datatable",
+    "icon": "file-earmark-spreadsheet-fill",
+    "submenu": [
+      {
+        "name": "Datatable",
+        "url": "table-datatable.html"
+      },
+      {
+        "name": "Datatable (jQuery)",
+        "url": "table-datatable-jquery.html"
+      }
+    ]
   },
   {
     "name": "Extra UI",
@@ -357,7 +390,7 @@
   {
     "name": "Donate",
     "key": "error",
-    "url": "https://github.com/zuramai/mazer#donate",
+    "url": "https://github.com/zuramai/mazer#donation",
     "icon": "cash"
   }
 ]

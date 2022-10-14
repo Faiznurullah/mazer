@@ -1,47 +1,107 @@
-const mix = require('laravel-mix');
-const sidebarItems = require('./src/sidebar-items.json');
-require('laravel-mix-nunjucks')
+const mix = require("laravel-mix")
+const MixGlob = require("laravel-mix-glob")
+const sidebarItems = require("./src/sidebar-items.json")
+const horizontalMenuItems = require("./src/horizontal-menu-items.json")
+require("laravel-mix-nunjucks")
 
-mix.sass('src/assets/scss/app.scss', 'assets/css')
-    .sass('src/assets/scss/bootstrap.scss', 'assets/css')
-    .sass('src/assets/scss/pages/auth.scss', 'assets/css/pages')
-    .sass('src/assets/scss/pages/error.scss', 'assets/css/pages')
-    .sass('src/assets/scss/pages/email.scss', 'assets/css/pages')
-    .sass('src/assets/scss/pages/chat.scss', 'assets/css/pages')
-    .sass('src/assets/scss/widgets/chat.scss', 'assets/css/widgets')
-    .sass('src/assets/scss/widgets/todo.scss', 'assets/css/widgets')
-    .setPublicPath('dist')
-    .options({
-        processCssUrls: false
-    });
+// String constants
+const assetsPath = "src/assets/"
 
-// mix.js('node_modules/apexcharts/dist/apexcharts.min.js', 'assets/vendors/apexcharts');
+// Create MixGlob instance
+const mixGlob = new MixGlob({ mix }) // mix is required
 
-mix.browserSync({
-    proxy: 'mazer.test',
-});
+// Files loaded from css url()s will be placed alongside our resources
+mix.options({
+  fileLoaderDirs: {
+    fonts: "assets/fonts",
+    images: "assets/images",
+  },
+})
 
-mix.njk('src/', 'dist/', {
-    ext: '.html',
-    marked: null,
+// Modules and extensions
+const modulesToCopy = {
+  "@icon/dripicons": false,
+  "@fortawesome/fontawesome-free": false,
+  "rater-js": false,
+  "bootstrap-icons": false,
+  apexcharts: true,
+  "perfect-scrollbar": true,
+  filepond: true,
+  "filepond-plugin-image-preview": true,
+  "feather-icons": true,
+  dragula: true,
+  dayjs: false,
+  "chart.js": true,
+  "choices.js": false,
+  parsleyjs: true,
+  sweetalert2: true,
+  summernote: true,
+  jquery: true,
+  quill: true,
+  tinymce: false,
+  "toastify-js": false,
+  "datatables.net-bs5": false,
+  "simple-datatables": true, // With dist folder = true
+}
+for (const mod in modulesToCopy) {
+  let modulePath = `node_modules/${mod}`
+  if (modulesToCopy[mod]) modulePath += "/dist"
+
+  mix.copy(modulePath, `dist/assets/extensions/${mod}`)
+}
+
+mixGlob
+  // Attention: put all generated css files directly into a subfolder
+  // of assets/css. Resource loading might fail otherwise.
+  .sass(`${assetsPath}scss/app.scss`, "assets/css/main")
+  .sass(`${assetsPath}scss/themes/dark/app-dark.scss`, "assets/css/main")
+  .sass(`${assetsPath}scss/pages/*.scss`, "assets/css/pages")
+  .sass(`${assetsPath}scss/widgets/*.scss`, "assets/css/widgets")
+  .sass(`${assetsPath}scss/iconly.scss`, "assets/css/shared")
+  .js(`${assetsPath}js/*.js`, "assets/js")
+
+// Copying assets
+mix
+  .copy("src/assets/images", "dist/assets/images")
+  .copy(
+    "node_modules/bootstrap-icons/bootstrap-icons.svg",
+    "dist/assets/images"
+  )
+  .copy(`${assetsPath}js/pages`, "dist/assets/js/pages")
+  // We place all generated css in /assets/css/xxx
+  // This is the relative path to the fileLoaderDirs we specified above
+  .setResourceRoot("../../../")
+  .setPublicPath("dist")
+
+// Nunjucks Templating
+mix.njk("src/*.html", "dist/", {
+  ext: ".html",
+  watch: true,
+  data: {
+    web_title: "Mazer Admin Dashboard",
+    sidebarItems,
+    horizontalMenuItems,
+  },
+  block: "content",
+  envOptions: {
     watch: true,
-    data: {
-        web_title: "Mazer Admin Dashboard",
-        sidebarItems
-    },
-    block: 'content',
-    envOptions: {
-        watch: true,
-        noCache: true
-    },
-    manageEnv: (nunjucks) => {
-        nunjucks.addFilter('containString', function (str, containStr) {
-            if (str == undefined) return false;
-            return str.indexOf(containStr) >= 0
-        })
-        nunjucks.addFilter('startsWith', function (str, targetStr) {
-            if (str == undefined) return false;
-            return str.startsWith(targetStr)
-        })
-    },
+    noCache: true,
+  },
+  manageEnv: (nunjucks) => {
+    nunjucks.addFilter("containString", (str, containStr) => {
+      if (!str.length) return false
+      return str.indexOf(containStr) >= 0
+    })
+    nunjucks.addFilter("startsWith", (str, targetStr) => {
+      if (!str.length) return false
+      return str.startsWith(targetStr)
+    })
+  },
+})
+
+// Browsersync
+mix.browserSync({
+  files: ["src/scss/*.scss", "src/**/*.html", "src/assets/js/**/*.js"],
+  server: "dist",
+  port: 3003,
 })

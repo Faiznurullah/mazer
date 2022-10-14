@@ -1,17 +1,16 @@
-{% set title = 'Dropdown' %}
-{% set filename = 'component-dropdown.html' %}
-
-{% extends 'layouts/master.html' %}
-{% block content %}
+{% set title = 'Dropdown' %} {% set filename = 'component-dropdown.html' %} {%
+extends 'layouts/master.html' %} {% block content %}
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Dropdown</h3>
-                <p class="text-subtitle text-muted">A carousel without slide control</p>
+                <p class="text-subtitle text-muted">
+                    Multi-purpose dropdown component with tons of variations.
+                </p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class='breadcrumb-header float-start float-lg-end'>
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Dropdown</li>
@@ -144,9 +143,11 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <p>To create a split button add class <code>.dropdown-toggle-split</code> with your dropdown
-                                toggle class
-                                And to add divider between dropdown item use class <code>.doprdown-divider</code>
+                            <p>
+                                To create a split button add class
+                                <code>.dropdown-toggle-split</code> with your dropdown toggle
+                                class and to add divider between dropdown item use class
+                                <code>.doprdown-divider</code>
                             </p>
                             <div class="btn-group dropdown me-1 mb-1">
                                 <button type="button" class="btn btn-primary">Primary</button>
@@ -164,7 +165,9 @@
                                 </div>
                             </div>
                             <div class="btn-group dropdown me-1 mb-1">
-                                <button type="button" class="btn btn-secondary">Secondary</button>
+                                <button type="button" class="btn btn-secondary">
+                                    Secondary
+                                </button>
                                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                     data-reference="parent">
@@ -286,9 +289,10 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <p>Use <code>.dropdown-item-emoji</code> within <code>.dropdown-item</code> for font-size
-                                and
-                                spacing of emojis.</p>
+                            <p>
+                                Use <code>.dropdown-item-emoji</code> within
+                                <code>.dropdown-item</code> for font-size and spacing of emojis.
+                            </p>
                             <div class="btn-group mb-1">
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle me-1" type="button"
@@ -298,8 +302,7 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonIcon">
                                         <a class="dropdown-item" href="#"><i class="bi bi-bar-chart-alt-2 me-50"></i>
-                                            Option
-                                            1</a>
+                                            Option 1</a>
                                         <a class="dropdown-item" href="#"><i class="bi bi-bell me-50"></i> Option 2</a>
                                         <a class="dropdown-item" href="#"><i class="bi bi-time me-50"></i> Option 3</a>
                                     </div>
@@ -331,14 +334,12 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonEmoji">
                                         <a class="dropdown-item" href="#"><span class="dropdown-item-emoji">😆</span>
-                                            Option
-                                            1</a>
+                                            Option 1</a>
                                         <a class="dropdown-item" href="#"><span class="dropdown-item-emoji">😎</span>
-                                            Option
-                                            2 </a>
+                                            Option 2
+                                        </a>
                                         <a class="dropdown-item" href="#"><span class="dropdown-item-emoji">🤩</span>
-                                            Option
-                                            3</a>
+                                            Option 3</a>
                                     </div>
                                 </div>
                             </div>
@@ -361,10 +362,11 @@
                     <div class="card-content">
                         <div class="card-body">
                             <p>
-                                Add <code>.dropdown-menu-end</code> to a <code>.dropdown-menu</code> to right align the
-                                dropdown menu.
-                                Trigger dropdown menus at the up / right / left of the elements by adding
-                                <code>.dropup | .dropright | .dropleft </code> to the parent element.
+                                Add <code>.dropdown-menu-end</code> to a
+                                <code>.dropdown-menu</code> to right align the dropdown menu.
+                                Trigger dropdown menus at the up / right / left of the elements
+                                by adding <code>.dropup | .dropright | .dropleft </code> to the
+                                parent element.
                             </p>
                             <div class="direction-dropdown-default mt-1">
                                 <div class="btn-group me-1 mb-1">
@@ -402,7 +404,7 @@
                                         <a class="dropdown-item" href="#">Option 3</a>
                                     </div>
                                 </div>
-                                <div class="btn-group dropstart  mb-1">
+                                <div class="btn-group dropstart mb-1">
                                     <button type="button" class="btn btn-secondary dropdown-toggle"
                                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Drop left
@@ -432,8 +434,10 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <p>Button dropdowns work with buttons of all sizes, including default and split dropdown
-                                buttons.</p>
+                            <p>
+                                Button dropdowns work with buttons of all sizes, including
+                                default and split dropdown buttons.
+                            </p>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12">
                                     <div class="btn-group me-1 mb-1">
@@ -478,7 +482,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <div class="btn-group dropdown me-1 mb-1">
-                                        <button type="button" class="btn btn-primary btn-lg ">
+                                        <button type="button" class="btn btn-primary btn-lg">
                                             Large
                                         </button>
                                         <button type="button"
@@ -542,9 +546,11 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <p>Use <code>data-offset</code> or <code>data-reference</code> attributes to change the
-                                location
-                                of the dropdown.</p>
+                            <p>
+                                Use <code>data-offset</code> or
+                                <code>data-reference</code> attributes to change the location of
+                                the dropdown.
+                            </p>
                             <div class="btn-group dropdown me-1 mb-1">
                                 <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -559,7 +565,9 @@
                             </div>
 
                             <div class="btn-group dropdown mb-1">
-                                <button type="button" class="btn btn-secondary">Reference</button>
+                                <button type="button" class="btn btn-secondary">
+                                    Reference
+                                </button>
                                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
                                     id="dropdownMenuReference" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" data-reference="parent">
@@ -591,14 +599,14 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <p>To create a dropdown with groups you can use <code>.dropdown-header</code> for the header
-                                of
-                                groups
-                                and for sepration of group you can use <code>.dropdown-divider</code>.
+                            <p>
+                                To create a dropdown with groups you can use
+                                <code>.dropdown-header</code> for the header of groups and for
+                                separation of group you can use <code>.dropdown-divider</code>.
                             </p>
                             <p>
-                                To create a dropdown with icons use class <code>.dropdown-icon-wrapper</code> with
-                                <code>.dropdown</code>.
+                                To create a dropdown with icons use class
+                                <code>.dropdown-icon-wrapper</code> with <code>.dropdown</code>.
                             </p>
                             <div class="btn-group dropup me-1 mb-1">
                                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton902"
@@ -620,9 +628,7 @@
                                 </div>
                             </div>
                             <div class="btn-group dropup dropdown-icon-wrapper me-1 mb-1">
-                                <button type="button" class="btn btn-primary">
-                                    Icons
-                                </button>
+                                <button type="button" class="btn btn-primary">Icons</button>
                                 <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="bi bi-wifi dropdown-icon"></i>
@@ -658,20 +664,22 @@
                                         <div class="form-group">
                                             <label for="exampleDropdownFormEmail1">Email address</label>
                                             <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                                                placeholder="email">
+                                                placeholder="Email" />
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleDropdownFormPassword1">Password</label>
                                             <input type="password" class="form-control"
-                                                id="exampleDropdownFormPassword1" placeholder="Password">
+                                                id="exampleDropdownFormPassword1" placeholder="Password" />
                                         </div>
                                         <div class="form-group">
                                             <div class="checkbox">
-                                                <input type="checkbox" class="checkbox-input" id="dropdownCheck1">
+                                                <input type="checkbox" class="checkbox-input" id="dropdownCheck1" />
                                                 <label for="dropdownCheck1">Remember me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Sign in</button>
+                                        <button type="submit" class="btn btn-primary">
+                                            Sign in
+                                        </button>
                                     </form>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#">New around here? Sign up</a>
@@ -685,6 +693,5 @@
         </div>
     </section>
     <!-- Dropdown variations Ends -->
-
 </div>
 {% endblock %}

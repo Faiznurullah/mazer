@@ -1,5 +1,5 @@
 {% set title = 'Summernote' %}
-{% set filename = 'form-editor-quill.html' %}
+{% set filename = 'form-editor-summernote.html' %}
 
 {% extends 'layouts/master.html' %}
 {% block content %}
@@ -8,10 +8,10 @@
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
                 <h3>Summernote </h3>
-                <p class="text-subtitle text-muted">Super simple WYSIWYG editor. But you must include jQuery</p>
+                <p class="text-subtitle text-muted">Super simple WYSIWYG editor. But you must include jQuery.</p>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
-                <nav aria-label="breadcrumb" class='breadcrumb-header float-start float-lg-end'>
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Summernote</li>
@@ -52,30 +52,11 @@
 {% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="assets/vendors/summernote/summernote-lite.min.css">
+<link rel="stylesheet" href="assets/css/pages/summernote.css">
+<link rel="stylesheet" href="assets/extensions/summernote/summernote-lite.css">
 {% endblock %}
 {% block js %}
-<script src="assets/vendors/jquery/jquery.min.js"></script>
-<script src="assets/vendors/summernote/summernote-lite.min.js"></script>
-<script>
-    $('#summernote').summernote({
-        tabsize: 2,
-        height: 120,
-    })
-    $("#hint").summernote({
-        height: 100,
-        toolbar: false,
-        placeholder: 'type with apple, orange, watermelon and lemon',
-        hint: {
-            words: ['apple', 'orange', 'watermelon', 'lemon'],
-            match: /\b(\w{1,})$/,
-            search: function (keyword, callback) {
-                callback($.grep(this.words, function (item) {
-                    return item.indexOf(keyword) === 0;
-                }));
-            }
-        }
-    });
-
-</script>
+<script src="assets/extensions/jquery/jquery.min.js"></script>
+<script src="assets/extensions/summernote/summernote-lite.min.js"></script>
+<script src="assets/js/pages/summernote.js"></script>
 {% endblock %}
