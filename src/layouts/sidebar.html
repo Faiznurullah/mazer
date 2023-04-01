@@ -2,7 +2,7 @@
     <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo" srcset=""></a>
+                <a href="index.html"><img src="assets/static/images/logo/logo.svg" alt="Logo" srcset=""></a>
             </div>
             <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -46,13 +46,28 @@
                 <a href="{{sidebarItem.url if sidebarItem.url!==undefined else '#'}}" class='sidebar-link'>
                     <i class="bi bi-{{ sidebarItem.icon }}"></i>
                     <span>{{sidebarItem.name}}</span>
-                </a>{% if sidebarItem.submenu.length > 0 %}
-                <ul class="submenu {{ 'active' if (sub.url == filename or filename|startsWith(sidebarItem.key)) }}">{%
-                    for sub in sidebarItem.submenu %}
-                    <li class="submenu-item {{ 'active' if sub.url == filename }}">
-                        <a href="{{ sub.url }}">{{ sub.name }}</a>
-                    </li>{% endfor %}
-                </ul>{% endif %}
+                </a>
+                {% if sidebarItem.submenu.length > 0 %}
+                <ul class="submenu {{ 'active' if (sub.url == filename or filename|startsWith(sidebarItem.key)) }}">
+                    {% for sub in sidebarItem.submenu %}
+                    <li class="submenu-item {{ 'active' if sub.url == filename or filename|startsWith(sub.key) }} {{'has-sub' if sub.submenu.length > 0 }}">
+                        <a href="{{ sub.url }}" class="submenu-link">{{ sub.name }}</a>
+                        {% if sub.submenu.length > 0 %}
+                        <ul class="submenu submenu-level-2 ">
+
+                            {% for subsub in sub.submenu %}
+                            <li class="submenu-item {{ 'active' if subsub.url == filename }}">
+                                <a href="{{ subsub.url }}" class="submenu-link">{{ subsub.name }}</a>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
             </li>
             {% endif %}{% endfor %}
         </ul>

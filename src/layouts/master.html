@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - {{ web_title }}</title>
     {% block stylesfirst %}{% endblock %}
-    <link rel="stylesheet" href="assets/css/main/app.css">
-    <link rel="stylesheet" href="assets/css/main/app-dark.css">
-    <link rel="shortcut icon" href="assets/images/logo/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/scss/app.scss">
+    <link rel="stylesheet" href="assets/scss/themes/dark/app-dark.scss">
+    <link rel="shortcut icon" href="assets/static/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/static/images/logo/favicon.png" type="image/png">
     {% block styles %}{% endblock %}
 </head>
 
 <body>
-    <script src="assets/js/initTheme.js"></script>
+    <script src="assets/static/js/initTheme.js"></script>
     <div id="app">
-        <div id="sidebar" class="active">
-            {% include "layouts/sidebar.html" %}
+        <div id="sidebar">
+            {% include "src/layouts/sidebar.html" %}
         </div>
         <div id="main">
             <header class="mb-3">
@@ -39,8 +39,15 @@
             </footer>
         </div>
     </div>
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/static/js/components/dark.js"></script>
+    <script src="assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    
+    {% if isDev %}
+    <script src="assets/js/app.js" type="module"></script>
+    {% else %}
+    <script src="assets/compiled/js/app.js"></script>
+    {% endif %}
+
     {% block js %}{% endblock %}
 </body>
 

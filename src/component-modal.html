@@ -1,7 +1,7 @@
 {% set title = 'Modal' %}
 {% set filename = 'component-modal.html' %}
 
-{% extends 'layouts/master.html' %}
+{% extends 'src/layouts/master.html' %}
 {% block content %}
 <div class="page-heading">
     <div class="page-title">
@@ -828,14 +828,14 @@
                                             </div>
                                             <form action="#">
                                                 <div class="modal-body">
-                                                    <label>Email: </label>
+                                                    <label for="email">Email: </label>
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Email Address"
+                                                        <input id="email" type="text" placeholder="Email Address"
                                                             class="form-control">
                                                     </div>
-                                                    <label>Password: </label>
+                                                    <label for="password">Password: </label>
                                                     <div class="form-group">
-                                                        <input type="password" placeholder="Password"
+                                                        <input id="password" type="password" placeholder="Password"
                                                             class="form-control">
                                                     </div>
                                                 </div>

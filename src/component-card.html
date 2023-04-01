@@ -1,7 +1,7 @@
 {% set title = 'Card' %}
 {% set filename = 'component-card.html' %}
 
-{% extends 'layouts/master.html' %}
+{% extends 'src/layouts/master.html' %}
 {% block content %}
 <div class="page-heading">
     <div class="page-title">
@@ -34,7 +34,7 @@
                                 sugar plum sugar plum jelly-o jujubes bonbon dessert carrot cake.
                             </p>
                         </div>
-                        <img class="img-fluid w-100" src="assets/images/samples/banana.jpg" alt="Card image cap">
+                        <img class="img-fluid w-100" src="assets/static/images/samples/banana.jpg" alt="Card image cap">
                     </div>
                     <div class="card-footer d-flex justify-content-between">
                         <span>Card Footer</span>
@@ -43,69 +43,71 @@
                 </div>
                 <div class="card collapse-icon accordion-icon-rotate">
                     <div class="card-header">
-                        <h1 class="card-title pl-1">Accordion</h1>
+                        <h4 class="card-title pl-1">Accordion</h4>
                     </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div class="accordion" id="cardAccordion">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
-                                        role="button">
-                                        <span class="collapsed collapse-title">Accordion Item 1</span>
-                                    </div>
-                                    <div id="collapseOne" class="collapse pt-1" aria-labelledby="headingOne"
-                                        data-parent="#cardAccordion">
-                                        <div class="card-body">
-                                            Cheesecake muffin cupcake dragée lemon drops tiramisu cake gummies chocolate
-                                            cake. Marshmallow tart
-                                            croissant. Tart dessert tiramisu marzipan lollipop lemon drops.
+                    <div class="card-body">
+                        <div class="accordion" id="cardAccordion">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Accordion Item #1
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the first item's accordion body.</strong> It is shown by
+                                            default, until the collapse plugin adds the appropriate classes that we use
+                                            to style each element. These classes control the overall appearance, as well
+                                            as the showing and hiding via CSS transitions. You can modify any of this
+                                            with custom CSS or overriding our default variables. It's also worth noting
+                                            that just about any HTML can go within the <code>.accordion-body</code>,
+                                            though the transition does limit overflow.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card collapse-header">
-                                    <div class="card-header" id="headingTwo" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                                        role="button">
-                                        <span class="collapsed collapse-title">Accordion Item 2</span>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse pt-1" aria-labelledby="headingTwo"
-                                        data-parent="#cardAccordion">
-                                        <div class="card-body">
-                                            Pastry pudding cookie toffee bonbon jujubes jujubes powder topping. Jelly
-                                            beans
-                                            gummi bears sweet
-                                            roll bonbon muffin liquorice. Wafer lollipop sesame snaps.
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Accordion Item #2
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the second item's accordion body.</strong> It is hidden by
+                                            default, until the collapse plugin adds the appropriate classes that we use
+                                            to style each element. These classes control the overall appearance, as well
+                                            as the showing and hiding via CSS transitions. You can modify any of this
+                                            with custom CSS or overriding our default variables. It's also worth noting
+                                            that just about any HTML can go within the <code>.accordion-body</code>,
+                                            though the transition does limit overflow.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card open">
-                                    <div class="card-header" id="headingThree" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThree" aria-expanded="true"
-                                        aria-controls="collapseThree" role="button">
-                                        <span class="collapsed collapse-title">Accordion Item 3</span>
-                                    </div>
-                                    <div id="collapseThree" class="collapse show pt-1" aria-labelledby="headingThree"
-                                        data-parent="#cardAccordion">
-                                        <div class="card-body">
-                                            Sweet pie candy jelly. Sesame snaps biscuit sugar plum. Sweet roll topping
-                                            fruitcake. Caramels
-                                            liquorice biscuit ice cream fruitcake cotton candy tart.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="headingFour" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFour" aria-expanded="false"
-                                        aria-controls="collapseFour" role="button">
-                                        <span class="collapsed  collapse-title">Accordion Item 4</span>
-                                    </div>
-                                    <div id="collapseFour" class="collapse pt-1" aria-labelledby="headingFour"
-                                        data-parent="#cardAccordion">
-                                        <div class="card-body">
-                                            Sweet pie candy jelly. Sesame snaps biscuit sugar plum. Sweet roll topping
-                                            fruitcake. Caramels
-                                            liquorice biscuit ice cream fruitcake cotton candy tart.
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Accordion Item #3
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>This is the third item's accordion body.</strong> It is hidden by
+                                            default, until the collapse plugin adds the appropriate classes that we use
+                                            to style each element. These classes control the overall appearance, as well
+                                            as the showing and hiding via CSS transitions. You can modify any of this
+                                            with custom CSS or overriding our default variables. It's also worth noting
+                                            that just about any HTML can go within the <code>.accordion-body</code>,
+                                            though the transition does limit overflow.
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +119,7 @@
             <div class="col-xl-4 col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-content">
-                        <img src="assets/images/samples/motorcycle.jpg" class="card-img-top img-fluid"
+                        <img src="assets/static/images/samples/motorcycle.jpg" class="card-img-top img-fluid"
                             alt="singleminded">
                         <div class="card-body">
                             <h5 class="card-title">Be Single Minded</h5>
@@ -165,15 +167,15 @@
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="assets/images/samples/architecture1.jpg" class="d-block w-100"
+                                    <img src="assets/static/images/samples/architecture1.jpg" class="d-block w-100"
                                         alt="Image Architecture">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/samples/bg-mountain.jpg" class="d-block w-100"
+                                    <img src="assets/static/images/samples/bg-mountain.jpg" class="d-block w-100"
                                         alt="Image Mountain">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="assets/images/samples/jump.jpg" class="d-block w-100" alt="Image Jump">
+                                    <img src="assets/static/images/samples/jump.jpg" class="d-block w-100" alt="Image Jump">
                                 </div>
                             </div>
                             <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
@@ -257,7 +259,7 @@
             <div class="col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-content">
-                        <img class="card-img-bottom img-fluid" src="assets/images/samples/building.jpg"
+                        <img class="card-img-bottom img-fluid" src="assets/static/images/samples/building.jpg"
                             alt="Card image cap" style="height: 20rem; object-fit: cover;">
                         <div class="card-body">
                             <h4 class="card-title">Social Media</h4>
@@ -271,13 +273,16 @@
                         </div>
                         <div class="btn-group align-items-center mx-2 px-1">
                             <button type="button" class="btn btn-link p-2 m-1 text-decoration-none">
-                                <i class="bi bi-heart d-flex align-items-center justify-content-center text-secondary"></i>
+                                <i
+                                    class="bi bi-heart d-flex align-items-center justify-content-center text-secondary"></i>
                             </button>
                             <button type="button" class="btn btn-link p-2 m-1 text-decoration-none">
-                                <i class="bi bi-chat d-flex align-items-center justify-content-center text-secondary"></i>
+                                <i
+                                    class="bi bi-chat d-flex align-items-center justify-content-center text-secondary"></i>
                             </button>
                             <button type="button" class="btn btn-link p-2 m-1 text-decoration-none">
-                                <i class="bi bi-bookmark d-flex align-items-center justify-content-center text-secondary"></i>
+                                <i
+                                    class="bi bi-bookmark d-flex align-items-center justify-content-center text-secondary"></i>
                             </button>
                         </div>
                     </div>
@@ -286,7 +291,7 @@
             <div class="col-md-6 col-sm-12">
                 <div class="card">
                     <div class="card-content">
-                        <img class="card-img-top img-fluid" src="assets/images/samples/origami.jpg" alt="Card image cap"
+                        <img class="card-img-top img-fluid" src="assets/static/images/samples/origami.jpg" alt="Card image cap"
                             style="height: 20rem" />
                         <div class="card-body">
                             <h4 class="card-title">Top Image Cap</h4>
@@ -321,7 +326,7 @@
                             </p>
                             <small class="text-muted">Last updated 3 mins ago.</small>
                         </div>
-                        <img class="card-img-bottom img-fluid" src="assets/images/samples/water.jpg"
+                        <img class="card-img-bottom img-fluid" src="assets/static/images/samples/water.jpg"
                             alt="Card image cap" style="height: 20rem; object-fit: cover;">
                     </div>
                 </div>
@@ -343,7 +348,7 @@
                 <div class="card-group">
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/1.png" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/static/images/samples/1.png" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">
@@ -355,7 +360,7 @@
                     </div>
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/2.png"
+                            <img class="card-img-top img-fluid" src="assets/static/images/samples/2.png"
                                 alt="Card image cap" />
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
@@ -369,7 +374,7 @@
                     </div>
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/3.png" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/static/images/samples/3.png" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">
@@ -382,7 +387,7 @@
                     </div>
                     <div class="card">
                         <div class="card-content">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/4.png" alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="assets/static/images/samples/4.png" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title">Card title</h4>
                                 <p class="card-text">

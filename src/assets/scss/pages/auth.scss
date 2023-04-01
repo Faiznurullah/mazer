@@ -1,7 +1,7 @@
 @import "../variables";
 
 body {
-    background-color: $page-auth-bg;
+    background-color: var(--bs-body-bg);
 }
 #auth {
     height: 100vh;
@@ -9,7 +9,7 @@ body {
     
     #auth-right {
         height: 100%;
-        background:  url(../../images/bg/4853433.png), $page-auth-right-bg;
+        background:  url(../static/images/bg/4853433.png), $page-auth-right-bg;
     }
     #auth-left {
         padding: 5rem 8rem;
@@ -29,6 +29,9 @@ body {
                 height: 2rem;
             }
         }
+        @media screen and (max-width: 1399.9px) {
+            padding: 3rem ;
+        }
         @media screen and (max-width: 767px) {
             padding: 5rem ;
         }
@@ -38,7 +41,7 @@ body {
     }
 }
 
-body.theme-dark {
+html[data-bs-theme="dark"] {
     @import "../themes/dark/variables-dark";
     @debug $page-auth-right-bg;
 

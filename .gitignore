@@ -6,3 +6,8 @@
 package-lock.json
 
 dist.zip
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+dist/*

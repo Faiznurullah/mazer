@@ -1,10 +1,23 @@
 
-.navbar-fixed {
-    position: fixed;
-    background-color: #fff;
+.layout-navbar {
+    --navbar-height: 90px;
+}
+.layout-navbar.navbar-fixed {
+    display: block !important;
+}
+.navbar-fixed > header {
+    display: unset;
+    height: var(--navbar-height);
+}
+.navbar-fixed .navbar-top {
+    position: sticky;
+    background-color: var(--bs-body-bg);
+    z-index: 9;
+    top: 0;
+    width: inherit;
 }
 .navbar {
-    height:90px;
+    height: var(--navbar-height);
     padding: 1.5rem;
     .navbar-brand img {
         height: 1.5rem;
@@ -74,9 +87,12 @@
 }
 
 .layout-horizontal {
+    .container {
+        --bs-gutter-x: 1.5rem;
+    }
     .header-top {
         background-color: $horizontal-header-bg;
-        padding:1.1rem;
+        padding: 1.1rem .4rem;
 
         .container {
             display: flex;
@@ -96,6 +112,9 @@
         display: flex;
         gap: 1rem;
         align-items: center;
+    }
+    .submenu-item.active a {
+        font-weight: bold;
     }
     .main-navbar  {
         background-color: $horizontal-navbar-bg;
@@ -125,6 +144,9 @@
                 position: relative;
                 .menu-link {
                     color: $gray-300;
+                }
+                &.active a {
+                    color: white;
                 }
                 &.has-sub .menu-link {
                     padding-right: 1.3rem;
@@ -166,6 +188,9 @@
     
                 .submenu-item { 
                     position: relative;
+                    &.active .submenu-link {
+                        color: var(--bs-primary)
+                    }
                     &.has-sub .submenu-link {
                         position: relative;
                         &:after {
@@ -215,6 +240,7 @@
 
             &.active {
                 max-height: initial;
+                display: block;
             }
             ul {
                 flex-direction: column;

@@ -14,6 +14,10 @@
     "icon": "stack",
     "submenu": [
       {
+        "name": "Accordion",
+        "url": "component-accordion.html"
+      },
+      {
         "name": "Alert",
         "url": "component-alert.html"
       },
@@ -89,6 +93,14 @@
         "url": "extra-component-avatar.html"
       },
       {
+        "name": "Divider",
+        "url": "extra-component-divider.html"
+      },
+      {
+        "name": "Date Picker",
+        "url": "extra-component-date-picker.html"
+      },
+      {
         "name": "Sweet Alert",
         "url": "extra-component-sweetalert.html"
       },
@@ -99,10 +111,6 @@
       {
         "name": "Rating",
         "url": "extra-component-rating.html"
-      },
-      {
-        "name": "Divider",
-        "url": "extra-component-divider.html"
       }
     ]
   },
@@ -302,6 +310,38 @@
       {
         "name": "JS Vector Map",
         "url": "ui-map-jsvectormap.html"
+      }
+    ]
+  },
+  {
+    "name": "Multi-level Menu",
+    "key": "ui-multi-level-menu",
+    "icon": "three-dots",
+    "submenu": [
+      {
+        "name": "First Level",
+        "key": "ui-multi-level-menu",
+        "url": "#",
+        "submenu": [
+          {
+            "name": "Second Level",
+            "url": "ui-multi-level-menu.html"
+          },
+          {
+            "name": "Second Level Menu",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "name": "Another Menu",
+        "url": "#",
+        "submenu": [
+          {
+            "name": "Second Level Menu",
+            "url": "#"
+          }
+        ]
       }
     ]
   },

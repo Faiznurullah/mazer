@@ -1,17 +1,37 @@
+@mixin sidebar-active {
+    .sidebar-wrapper {
+        left: 0;
+    }
+    & ~ #main {
+        margin-left: 300px;
+    }
+}
+@mixin sidebar-inactive {
+    .sidebar-wrapper {
+        left: -300px;
+    }
+    & ~ #main {
+        margin-left: 0;
+    }
+}
+
 #sidebar {
+    @include sidebar-inactive();
+    
+    @media screen and (min-width: 992px) {
+        @include sidebar-active();
+    }
+
+    &.inactive {
+        @include sidebar-inactive();
+    }
+
     &.active {
         .sidebar-wrapper {
             left: 0;
         }
     }
-    &:not(.active) {
-        .sidebar-wrapper {
-            left: -300px;
-        }
-        & ~ #main {
-            margin-left: 0;
-        }
-    }
+    
 }
 .sidebar-wrapper {
     width: 300px;
@@ -22,7 +42,7 @@
     overflow-y: auto;
     background-color: $sidebar-bg;
     bottom: 0;
-    transition: left .5s ease-out;
+    transition: left .7s cubic-bezier(0.22, 1, 0.36, 1);
     .sidebar-header {
         padding: 2rem 2rem 1rem;
         font-size: 2rem;
@@ -80,16 +100,7 @@
             list-style: none;
             margin-top: .5rem;
             position: relative;
-            &.has-sub {
-                .sidebar-link:after {
-                    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9" style="fill:none;stroke:gray;stroke-width:1"></polyline></svg>');
-                    position: absolute;
-                    color: #ccc;
-                    right: 15px;
-                    top: 12px;
-                    display:block;
-                }
-            }
+            
             &.active {
                 &.has-sub {
                     .sidebar-link:after {
@@ -107,20 +118,26 @@
                     }
 
                     &.has-sub:after {
-                        content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9" style="fill:none;stroke:#fff;stroke-width:1"></polyline></svg>');
+                        content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9" style="fill:none;stroke:white;stroke-width:1"></polyline></svg>');
                     }
                 }
             }
         }
         .submenu {
             list-style: none;
-            display: none;
-            // max-height: 0;
-            transition: max-height 2s cubic-bezier(0, 0.55, 0.45, 1);
+            max-height: 0;
             overflow: hidden;
+            transition: all .5s;
+            // animation: max-height 2s cubic-bezier(0.22, 1, 0.36, 1);
             &.active {
-                max-height: 999px;
+                height: var(--submenu-height);
                 display: block;
+            }
+            &.submenu-closed {
+                max-height: 0;
+            }
+            &.submenu-open {
+                max-height: var(--submenu-height);
             }
             .submenu-item {
                 &.active {
@@ -148,6 +165,24 @@
         }
     }
 }
+@mixin caret {
+    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9" style="fill:none;stroke:gray;stroke-width:1"></polyline></svg>');
+    position: absolute;
+    color: #ccc;
+    right: 15px;
+    top: 12px;
+    display:block;
+}
+.sidebar-item.has-sub, .submenu-item.has-sub {
+    overflow: hidden;
+    position: relative;
+}
+.sidebar-item.has-sub > .sidebar-link:after {
+    @include caret()
+}
+.submenu-item.has-sub > .submenu-link:after {
+    @include caret()
+}
 .sidebar-backdrop {
     position: fixed;
     top: 0;
@@ -166,6 +201,19 @@
         }
     }
 }
-@media screen and (min-width: 1200px) {
-    
+@keyframes slideDown {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: var(--submenu-height)
+    }
+}
+@keyframes slideUp {
+    from {
+        max-height: var(--submenu-height)
+    }
+    to {
+        max-height: 0;
+    }
 }
