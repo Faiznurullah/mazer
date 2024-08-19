@@ -1,3 +1,14 @@
+
+FilePond.registerPlugin(
+  FilePondPluginImagePreview,
+  FilePondPluginImageCrop,
+  FilePondPluginImageExifOrientation,
+  FilePondPluginImageFilter,
+  FilePondPluginImageResize,
+  FilePondPluginFileValidateSize,
+  FilePondPluginFileValidateType,
+)
+
 // Filepond: Basic
 FilePond.create(document.querySelector(".basic-filepond"), {
   credits: null,
@@ -5,6 +16,7 @@ FilePond.create(document.querySelector(".basic-filepond"), {
   allowMultiple: false,
   allowFileEncode: false,
   required: false,
+  storeAsFile: true,
 })
 
 // Filepond: Multiple Files
@@ -14,6 +26,7 @@ FilePond.create(document.querySelector(".multiple-files-filepond"), {
   allowMultiple: true,
   allowFileEncode: false,
   required: false,
+  storeAsFile: true,
 })
 
 // Filepond: With Validation
@@ -29,6 +42,7 @@ FilePond.create(document.querySelector(".with-validation-filepond"), {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
+  storeAsFile: true,
 })
 
 // Filepond: ImgBB with server property
@@ -90,6 +104,7 @@ FilePond.create(document.querySelector(".imgbb-filepond"), {
       request.send(formData)
     },
   },
+  storeAsFile: true,
 })
 
 // Filepond: Image Preview
@@ -105,6 +120,7 @@ FilePond.create(document.querySelector(".image-preview-filepond"), {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
+  storeAsFile: true,
 })
 
 // Filepond: Image Crop
@@ -120,6 +136,7 @@ FilePond.create(document.querySelector(".image-crop-filepond"), {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
+  storeAsFile: true,
 })
 
 // Filepond: Image Exif Orientation
@@ -135,6 +152,7 @@ FilePond.create(document.querySelector(".image-exif-filepond"), {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
+  storeAsFile: true,
 })
 
 // Filepond: Image Filter
@@ -154,6 +172,7 @@ FilePond.create(document.querySelector(".image-filter-filepond"), {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
+  storeAsFile: true,
 })
 
 // Filepond: Image Resize
@@ -174,4 +193,5 @@ FilePond.create(document.querySelector(".image-resize-filepond"), {
       // Do custom type detection here and return with promise
       resolve(type)
     }),
+  storeAsFile: true,
 })

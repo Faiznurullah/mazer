@@ -1,12 +1,16 @@
 // Import mazer Variables
 
 @import "./../../variables";
-@import "./variables-dark";
 @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
 @import "~bootstrap/scss/mixins";
+@import "./variables-dark";
 @import "./root";
 
 html[data-bs-theme="dark"] {
+    @import '@sweetalert2/theme-dark/dark.scss';
+    
     // Bootstrap 
     @import "~bootstrap/scss/maps";
     @import "~bootstrap/scss/utilities";

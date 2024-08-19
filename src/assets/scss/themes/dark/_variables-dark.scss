@@ -9,6 +9,7 @@ $theme-colors-light: (
   'danger': tint-color($danger, 35%),
   'warning': tint-color($warning, 25%),
   'info': tint-color($info, 25%),
+  'dark': #666
 );
 
 $alert-colors: (
@@ -320,6 +321,8 @@ $choices-border-color:  $form-select-border-color;
 $choices-input-color:   $white;
 $choices-dropdown-bg:   $form-select-bg;
 $choices-dropdown-color:    $choices-input-color;
+
+
 $choices-highlight-bg:      lighten($card-bg, 5%);
 
 // Sweetalert

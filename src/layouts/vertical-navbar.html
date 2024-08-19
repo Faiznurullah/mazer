@@ -39,7 +39,7 @@
                                         aria-expanded="false">
                                         <i class='bi bi-envelope bi-sub fs-4'></i>
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <ul class="dropdown-menu  dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
                                         <li>
                                             <h6 class="dropdown-header">Mail</h6>
                                         </li>
@@ -51,7 +51,7 @@
                                         <i class='bi bi-bell bi-sub fs-4'></i>
                                         <span class="badge badge-notification bg-danger">7</span>
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="dropdownMenuButton">
+                                    <ul class="dropdown-menu dropdown-center  dropdown-menu-sm-end notification-dropdown" aria-labelledby="dropdownMenuButton">
                                         <li class="dropdown-header">
                                             <h6>Notifications</h6>
                                         </li>
@@ -121,17 +121,7 @@
             <div id="main-content">
                 {% block content %}{% endblock %}
             </div>
-            <footer>
-                <div class="footer clearfix mb-0 text-muted">
-                    <div class="float-start">
-                        <p>2021 &copy; Mazer</p>
-                    </div>
-                    <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                            by <a href="https://ahmadsaugi.com">Saugi</a></p>
-                    </div>
-                </div>
-            </footer>
+            {% include '../partials/footer.html' %}
         </div>
     </div>
     <script src="assets/static/js/components/dark.js"></script>

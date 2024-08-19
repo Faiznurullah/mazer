@@ -7,7 +7,9 @@
 
 @use 'sass:math';
 
-$dark-mode: false;
+@import "~bootstrap/scss/functions";
+
+$dark-mode: false !default;
 
 
 // Mazer Variables
@@ -20,6 +22,7 @@ $theme-colors-light: (
   'danger': #FFDEDE,
   'warning': #fffdd8,
   'info': #e6fdff,
+  'dark': #e3e3e3
 ) !default;
 
 $alert-colors: (
@@ -57,6 +60,8 @@ $alert-colors: (
     ),
 ) !default;
 
+$assets-path: '/assets' !default;
+
 // $btn-colors uses $theme-colors background color by default
 $btn-colors: (
   primary: (
@@ -69,7 +74,7 @@ $btn-colors: (
       text-color: #fff,
   ),
   warning: (
-      text-color: #fff,
+      text-color: #000,
   ),
   danger: (
       text-color: #fff,
@@ -78,12 +83,12 @@ $btn-colors: (
       text-color: #fff,
   ),
   light: (
-      text-color: #818182,
+      text-color: #000,
   ),
   info: (
-      text-color: #fff,
+      text-color: #000,
   ),
-);
+) !default;
 
 
 // Body
@@ -158,7 +163,7 @@ $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
+$light:         $gray-400 !default;
 $dark:          $body-bg;
 
 
@@ -209,7 +214,7 @@ $theme-colors: (
 // scss-docs-end theme-colors-map
 
 // scss-docs-start theme-colors-rgb
-$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default !default;
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
 // scss-docs-end theme-colors-rgb
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
@@ -1066,11 +1071,11 @@ $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
 $zindex-fixed:                      1030 !default;
 $zindex-offcanvas-backdrop:         1040 !default;
-$zindex-modal-backdrop:             1040 !default;
-$zindex-modal:                      1050 !default;
-$zindex-popover:                    1060 !default;
 $zindex-offcanvas:                  1045 !default;
-$zindex-tooltip:                    1070 !default;
+$zindex-modal-backdrop:             1050 !default;
+$zindex-modal:                      1055 !default;
+$zindex-popover:                    1070 !default;
+$zindex-tooltip:                    1080 !default;
 $zindex-toast:                      1090 !default;
 // scss-docs-end zindex-stack
 
@@ -1215,7 +1220,7 @@ $pagination-color:                  $link-color !default;
 $pagination-bg:                     $white !default;
 $pagination-border-width:           $border-width !default;
 $pagination-border-radius:          $border-radius !default;
-$pagination-margin-start:           -$pagination-border-width !default;
+$pagination-margin-start:           calc(#{$pagination-border-width} * -1) !default;
 $pagination-border-color:           $gray-300 !default;
 
 $pagination-focus-color:            $link-hover-color !default;
@@ -1623,4 +1628,8 @@ $choices-border-color:  $form-select-border-color;
 $choices-input-color:   $body-color;
 $choices-dropdown-bg:   $form-select-bg;
 $choices-dropdown-color:    $choices-input-color;
-$choices-highlight-bg:      lighten($card-bg, 5%);
+$choices-highlight-bg:      $card-bg;
+
+// Placeholder Bootstrap
+$placeholder-opacity-max:           .5;
+$placeholder-opacity-min:           .2;

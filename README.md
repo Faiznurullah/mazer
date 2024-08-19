@@ -18,6 +18,22 @@
 	<a href="https://github.com/zuramai/mazer/blob/main/README_INDONESIAN.md">Indonesian README</a>&nbsp;&nbsp;&nbsp;
 </p>
 
+
+<table>
+	<tr>
+		<th>Sponsored by</th>
+	</tr>
+	<tr>
+		<td>
+		<p align="center">
+			<a href="https://lokal.so/?ref=zuramai">
+				<img src="https://github.com/zuramai/zuramai/blob/master/sponsors/lokalso.png?raw=true"  width="50%">
+			</a>
+		</p>	
+		</td>
+	</tr>
+</table>
+
 ## Installation
 
 ### Using a ready-made built (recommended)
@@ -53,20 +69,69 @@ npm run dev
     - `docker build -t mazer-frontend .`
     - `docker run -it -d -p 5173:80 --name mazer mazer-frontend`
     - Open `http://localhost:5173`
+### Using CDN 
+Simple example using CDN from [jsdelivr.net](https://www.jsdelivr.com/).
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mazer Admin Dashboard</title>
+
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/svg/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/app-dark.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/iconly.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/static/js/initTheme.js"></script>
+    <!-- Start content here -->
+
+    <!-- End content -->
+    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/static/js/components/dark.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/js/app.js"></script>
+
+    <!-- Need: Apexcharts -->
+    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/static/js/pages/dashboard.js"></script>
+</body>
+
+</html>
+```
+
+#### CDN Prefix
+
+You can use the url with a prefix like this:
+```
+https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo
+```
+
+A simple example:
+```
+https://cdn.jsdelivr.net/gh/zuramai/mazer@docs/demo/assets/compiled/css/app.css
+```
 
 ## Community Mazer-based open sources
 
 - [CodeIgniter 4](https://github.com/irsyadulibad/mazer-codeigniter) by [@irsyadulibad](https://github.com/irsyadulibad)
-- [Laravel + Livewire](https://github.com/zuramai/laravel-mazer) (unmaintained, looking for maintainer)
+- [Laravel Mazer Starter](https://github.com/billalxcode/laravel-mazer-starter) by [@billalxcode](https://github.com/billalxcode)
 - [Nuxt](https://github.com/fzn0x/mazer-nuxt) by [@fzn0x](https://github.com/fzn0x)
 - [React JS Component Library](https://github.com/fachryansyah/react-mazer-ui) by [@fachryansyah](https://github.com/fachryansyah/)
 - [Adonisjs 5](https://github.com/afman42/mazer-adonisjs) by [@afman42](https://github.com/afman42/)
 - [Django](https://github.com/bimbims125/mazer-django) by [@bimbims125](https://github.com/bimbims125/)
 - [Flask](https://github.com/antheiz/mazer-flask) by [@antheiz](https://github.com/antheiz/)
-- [Symfony](https://github.com/jvl1v5/symfony-mazer) by [@jvl1v5](https://github.com/jvl1v5/)
+- [Symfony 6.3 (Mazer 2.1.0)](https://github.com/TheoD02/mazer-symfony-6.3/tree/mazer-2.1.0) by [@theod02](ttps://github.com/TheoD02)
 - [Spring-Thymeleaf](https://github.com/deyhay-enterprise/spring-project-mazer-template) by [@hi-rullah](https://github.com/hi-rullah)
 - [Ruby on Rails](https://github.com/noesya/mazer-rails) by [@noesya](https://github.com/noesya)
 - [Yii2](https://github.com/anovsiradj/yii2-theme-mazer) by [@anovsiradj](https://github.com/anovsiradj)
+- [Next JS](https://github.com/dipras/next-mazer) by [@dipras](https://github.com/dipras)
 - Did you make in another framework or tools? Open up Pull Requests and put yours here! 😃
 
 ## Contributing
